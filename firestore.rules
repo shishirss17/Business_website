@@ -1,0 +1,109 @@
+/**
+ * This ruleset enforces a strict user-ownership model for the SnuggleShop application.
+ *
+ * Core Philosophy:
+ * The security model is centered around the principle that users have exclusive control
+ * over their own data. All authorization is derived from the authenticated user's
+ * UID, ensuring that a user can only ever access or modify their own documents.
+ *
+ * Data Structure:
+ * All user-specific data is stored in a top-level `users` collection. Each user
+ * is represented by a single document where the document ID is the user's
+ * Firebase Authentication UID (e.g., /users/{userId}).
+ *
+ * Key Security Decisions:
+ * - User Privacy: Listing the entire `/users` collection is explicitly disallowed
+ *   to prevent enumeration of all application users.
+ * - Strict Ownership: All read and write operations on a user's profile document
+ *   are restricted to the owner of that document.
+ * - Self-Creation: A user is permitted to create their own profile document, but
+ *   not a profile for any other user ID.
+ *
+ * Denormalization for Authorization:
+ * This ruleset relies on path-based security, where the document ID (`userId`)
+ * directly corresponds to the owner's Firebase Auth UID. This is the most
+ * performant and secure method for this data structure, as it avoids any need for
+ * extra database reads (`get()` calls) to determine ownership.
+ *
+ * Structural Segregation:
+ * Not applicable in this model, as all data within the `/users` collection is
+ * treated as private to its respective owner.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ----------------------------------------------------------------------
+    // Helper Functions
+    // ----------------------------------------------------------------------
+
+    /**
+     * Checks if the user is authenticated.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * Checks if the authenticated user's UID matches the provided userId.
+     * This is the primary function for establishing document ownership.
+     */
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * Checks for ownership on an existing document. Used for update and delete
+     * operations to prevent acting on non-existent data.
+     */
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+
+    /**
+     * On create, validates that the document's internal `id` field matches the
+     * document's ID in the path (`userId`). This enforces relational integrity
+     * and ensures the creator is correctly identified in the data itself.
+     */
+    function hasValidProfileDataOnCreate(userId) {
+      return request.resource.data.id == userId;
+    }
+
+    /**
+     * On update, ensures that the document's internal `id` field is immutable
+     * and cannot be changed after creation.
+     */
+    function isImmutableUserId() {
+      return request.resource.data.id == resource.data.id;
+    }
+
+    // ----------------------------------------------------------------------
+    // Collection Rules
+    // ----------------------------------------------------------------------
+
+    /**
+     * @description Manages user profile documents. Only the user who owns the
+     *              profile can read, create, update, or delete it.
+     * @path /users/{userId}
+     * @allow (get) An authenticated user with UID 'user_abc' can read their own
+     *        profile at '/users/user_abc'.
+     * @allow (create) An authenticated user with UID 'user_abc' can create their
+     *        profile at '/users/user_abc', if the document data includes `id: 'user_abc'`.
+     * @deny (get) User 'user_abc' cannot read the profile of 'user_xyz' at
+     *       '/users/user_xyz'.
+     * @deny (list) No user can list all documents in the '/users' collection.
+     * @principle Restricts access to a user's own data tree and ensures privacy
+     *            by disallowing user enumeration.
+     */
+    match /users/{userId} {
+      // READ rules: A user can only get their own profile. Listing is denied for privacy.
+      allow get: if isOwner(userId);
+      allow list: if false;
+
+      // WRITE rules: A user can create, update, and delete their own profile.
+      allow create: if isOwner(userId) && hasValidProfileDataOnCreate(userId);
+      allow update: if isExistingOwner(userId) && isImmutableUserId();
+      allow delete: if isExistingOwner(userId);
+    }
+  }
+}

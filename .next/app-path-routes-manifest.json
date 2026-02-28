@@ -1,0 +1,14 @@
+{
+  "/api/contact/route": "/api/contact",
+  "/api/create-payment-intent/route": "/api/create-payment-intent",
+  "/favicon.ico/route": "/favicon.ico",
+  "/api/auth/[...nextauth]/route": "/api/auth/[...nextauth]",
+  "/_not-found/page": "/_not-found",
+  "/(auth)/login/page": "/login",
+  "/cart/page": "/cart",
+  "/checkout/page": "/checkout",
+  "/contact/page": "/contact",
+  "/order/[id]/page": "/order/[id]",
+  "/page": "/",
+  "/product/[id]/page": "/product/[id]"
+}

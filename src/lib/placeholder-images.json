@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A collection of cute stuffed animals on a soft blanket.",
+      "imageUrl": "https://images.unsplash.com/photo-1718818357890-d1a604e2b4f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzdHVmZmVkJTIwYW5pbWFsc3xlbnwwfHx8fDE3Njk3MTM3MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "stuffed animals"
+    },
+    {
+      "id": "teddy-bear-1",
+      "description": "A classic brown teddy bear sitting on a wooden floor.",
+      "imageUrl": "https://images.unsplash.com/photo-1581312742770-ce89199554af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVkZHklMjBiZWFyfGVufDB8fHx8MTc2OTYyNjUyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teddy bear"
+    },
+    {
+      "id": "teddy-bear-2",
+      "description": "Close up of a fluffy brown teddy bear's face.",
+      "imageUrl": "https://images.unsplash.com/photo-1658117828129-1ca925e9f9d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWRkeSUyMGJlYXIlMjBmYWNlfGVufDB8fHx8MTc2OTcxMzcwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teddy bear face"
+    },
+    {
+      "id": "bunny-1",
+      "description": "A soft white bunny plush with long ears.",
+      "imageUrl": "https://images.unsplash.com/photo-1765958516464-2a7ff73d1bca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxidW5ueSUyMHBsdXNofGVufDB8fHx8MTc2OTcxMzcwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bunny plush"
+    },
+    {
+      "id": "bunny-2",
+      "description": "A grey plush bunny held by a child.",
+      "imageUrl": "https://images.unsplash.com/photo-1652636347412-46f47856f540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwbHVzaCUyMGJ1bm55fGVufDB8fHx8MTc2OTcxMzcwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "plush bunny"
+    },
+    {
+      "id": "unicorn-1",
+      "description": "A magical unicorn plush with a rainbow mane.",
+      "imageUrl": "https://images.unsplash.com/photo-1607429486860-9192a334247d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dW5pY29ybiUyMHRveXxlbnwwfHx8fDE3Njk2NDU1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "unicorn toy"
+    },
+    {
+      "id": "unicorn-2",
+      "description": "A sparkly white unicorn plush toy standing up.",
+      "imageUrl": "https://images.unsplash.com/photo-1648070201547-9d6ef53d3a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx1bmljb3JuJTIwdG95fGVufDB8fHx8MTc2OTY0NTU4NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "unicorn toy"
+    },
+    {
+      "id": "dinosaur-1",
+      "description": "A green T-Rex plush toy with a friendly smile.",
+      "imageUrl": "https://images.unsplash.com/photo-1607948471407-3af873dda505?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkaW5vc2F1ciUyMHRveXxlbnwwfHx8fDE3Njk2NDU1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dinosaur toy"
+    },
+    {
+      "id": "dinosaur-2",
+      "description": "A brontosaurus plush toy in a soft blue color.",
+      "imageUrl": "https://images.unsplash.com/photo-1623613253704-1742ee18cc81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaW5vc2F1ciUyMHRveXxlbnwwfHx8fDE3Njk2NDU1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dinosaur toy"
+    },
+    {
+      "id": "koala-1",
+      "description": "A cuddly grey koala plush toy.",
+      "imageUrl": "https://images.unsplash.com/photo-1726401580439-5ccb2487939d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxrb2FsYSUyMHRveXxlbnwwfHx8fDE3Njk3MTM3MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "koala toy"
+    },
+    {
+      "id": "koala-2",
+      "description": "A koala plush toy hugging a tree branch.",
+      "imageUrl": "https://images.unsplash.com/photo-1572453378640-8e6576412855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxrb2FsYSUyMHRveXxlbnwwfHx8fDE3Njk3MTM3MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "koala toy"
+    },
+    {
+      "id": "lion-1",
+      "description": "A majestic lion plush with a fluffy mane.",
+      "imageUrl": "https://images.unsplash.com/photo-1769072385063-f9662633291e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsaW9uJTIwdG95fGVufDB8fHx8MTc2OTcxMzcwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lion toy"
+    },
+    {
+      "id": "lion-2",
+      "description": "A cute lion cub plush toy sitting down.",
+      "imageUrl": "https://images.unsplash.com/photo-1725404780773-f8f4808c19c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsaW9uJTIwdG95fGVufDB8fHx8MTc2OTcxMzcwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lion toy"
+    },
+    {
+      "id": "404-image",
+      "description": "A sad-looking teddy bear that has lost its way.",
+      "imageUrl": "https://images.unsplash.com/photo-1526063402628-3cda107c8df7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzYWQlMjB0ZWRkeXxlbnwwfHx8fDE3Njk3MTM3MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sad teddy"
+    }
+  ]
+}
